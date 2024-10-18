@@ -17,7 +17,7 @@ function App() {
     }
   }, []);
 
-
+console.log(tele)
 
   const onAdd = (food) => {
     const exist = cartItems.find((x) => x.id === food.id);
