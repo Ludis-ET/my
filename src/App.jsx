@@ -11,8 +11,11 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    tele.ready();
-  });
+    if (tele) {
+      tele.ready();
+    }
+  }, []);
+
 
   const onAdd = (food) => {
     const exist = cartItems.find((x) => x.id === food.id);
