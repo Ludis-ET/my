@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/main.jsx",
-      "use": "@vercel/static-build"
-    },
-    {
       "src": "bot.js",
       "use": "@vercel/node"
     }
@@ -17,7 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "src/main.jsx"
+      "dest": "/src/main.jsx"
     }
   ]
 }
