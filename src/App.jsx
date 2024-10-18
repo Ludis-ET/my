@@ -12,9 +12,11 @@ function App() {
 
   useEffect(() => {
     if (tele) {
+      console.log("Telegram WebApp initialized:", tele);
       tele.ready();
     }
   }, []);
+
 
 
   const onAdd = (food) => {
