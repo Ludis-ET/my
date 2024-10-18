@@ -11,9 +11,11 @@ function App() {
       <Button title={"Test"} disabled={false} type={"add"} />
       <Button title={"Test"} disabled={false} type={"remove"} />
       <Button title={"Test"} disabled={false} type={"checkout"} />
-      {foods.map((food) => (
-        <Card key={food.id} food={food} />
-      ))}
+      <div className="cards__container">
+        {foods.map((food) => (
+          <Card key={food.id} food={food} />
+        ))}
+      </div>
     </>
   );
 }

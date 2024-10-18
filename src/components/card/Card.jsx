@@ -1,8 +1,8 @@
-import { Button } from "../button/Button";
+import React, { useState } from "react";
 import "./Card.css";
-import { useState } from "react";
+import { Button } from "../button/Button";
 
-export const Card = ({ food, onAdd, onRemove }) => {
+export function Card({ food, onAdd, onRemove }) {
   const [count, setCount] = useState(0);
   const { title, Image, price, id } = food;
 
