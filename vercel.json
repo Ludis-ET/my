@@ -4,6 +4,10 @@
     {
       "src": "bot.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "dist/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -13,13 +17,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "src/main.jsx"
+      "dest": "/dist/$1"
     }
-  ],
-  "functions": {
-    "api/bot.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  ]
 }
