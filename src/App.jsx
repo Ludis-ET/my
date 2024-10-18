@@ -1,13 +1,20 @@
 import { useState } from "react";
 import "./App.css";
-import { Button } from "./components/button/Button";
+import { Cart } from "./components/cart/Cart";
 import { Card } from "./components/card/Card";
 import { getData } from "./db/db";
 
 const foods = getData();
 
+const tele = window.Telegram.WebApp;
+
 function App() {
   const [cartItems, setCartItems] = useState([]);
+
+
+  useEffect(() => {
+    tele.ready();
+  });
 
   const onAdd = (food) => {
     const exist = cartItems.find((x) => x.id === food.id);
@@ -38,7 +45,7 @@ function App() {
   return (
     <>
       <h1 className="heading">Order Food</h1>
-      <Cart cartItems={cartItems} onCheckout={onCheckout} />
+      <Cart cartItems={cartItems}  />
       <div className="cards__container">
         {foods.map((food) => {
           return (
