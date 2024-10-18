@@ -1,6 +1,6 @@
 import "./Button.css";
 
-export const Button = ({ title, type, disabled, onclick }) => {
+export const Button = ({ title, type, disabled, onClick }) => {
   return (
     <button
       className={`btn ${
@@ -9,7 +9,7 @@ export const Button = ({ title, type, disabled, onclick }) => {
         (type === "checkout" && "checkout")
       }`}
       disabled={disabled}
-      onClick={onclick}
+      onClick={onClick}
     >
       {title}
     </button>
