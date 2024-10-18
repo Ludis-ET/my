@@ -2,12 +2,25 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/main.jsx",
-      "use": "@vercel/static-build"
-    },
-    {
       "src": "bot.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/main.jsx", 
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/bot",
+      "dest": "bot.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/main.jsx"
     }
   ]
 }
